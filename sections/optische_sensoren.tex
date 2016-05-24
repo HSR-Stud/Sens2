@@ -1,0 +1,65 @@
+\section{Optische Sensoren}
+\subsection{Helligkeits-Sensoren}
+\subsubsection{Fotowiderstände LDR (Light Dependent Resistor)}
+Trifft Licht auf die fotoempfindliche Fläche des Fotowiderstands, verringert sich der Widerstand durch den inneren fotoelektrischen Effekt. D.h. ein eintreffendes Photon hebt ein Elektron in das Leitungsband, welches sich nun frei im Kristall bewegen kann: Das Material wird niederohmiger. LDR's haben den Nachteil, dass sie ziemlich wärmeempfindlich und träge sind (Der Dunkelwiderstand wird erst nach $\frac{1}{60}s$ wieder erreicht).
+
+\subsubsection{Photodiode}
+\begin{wrapfigure}[14]{l}{0.5\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/photodiode}
+\end{wrapfigure}
+Treffen Photonen mit ausreichender Energie auf einen pn-Übergang, so werden Ladungsträger (Elektron-Loch-Paare) erzeugt. In der Raumladungszone driften die Ladungsträger schnell entgegen der Diffusionsspannung in die gleichartig dotierten Zonen, und führen zu einem Strom. Ohne externe Verbindung der Anschlüsse entsteht an diesen eine messbare Spannung gleicher Polarität wie die Durchflussspannung (Sättigung). Sind die Anschlüsse miteinander elektrisch verbunden oder befinden sie sich an einer Spannung in Sperrrichtung der Diode, fliesst ein Photostrom, der proportional zum Lichteinfall ist. Die Photonen müssen eine höhere Energie als die des Bandabstandes aufweisen, um diesen Effekt hervorzurufen.
+
+\subsection{Solarzellen}
+Eine Photodiode kann als Solarzelle betrieben werden. Dabei gibt es die folgenden Betriebsmodi:
+\begin{compactitem}
+    \item ohne Last: Sättigung mit Leerlaufspannung $U_L$, $U_L$ hängt dabei wenig von der Lichtstärke ab
+    \item mit niederohmiger Last: Bei kleinerem $R_L$ sinkt Spannung und Strom steigt (bis max. Kurzschlussstrom $I_K$)
+    \item bei MPP: Am Knick der Kennlinie liegt der angestrebte Arbeitspunkt MPP (Maximum Power Point) mit max. Leistung. Der MPP liegt dabei bei ca. 80\% Leerlaufspannung.
+\end{compactitem}
+
+\subsection{Photodiode als Lichtsensor}
+\subsubsection{Betrieb im Quasi-Kurzschluss (U = 0)}
+\begin{wrapfigure}[5]{l}{0.25\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.22\textwidth]{images/photodiode_betrieb_01}
+\end{wrapfigure}
+Der Photo-Strom wird in Sperrrichtung erzeugt und ist linear abhängig von der Bestrahlungsstärke. Der Opamp ist als Transimpedanzverstärker geschaltet. Es erfolgt keine Änderung der Spannung und keine Umladung von Kapazitäten. Dadurch ist die Schaltung relativ schnell. Die grosse Diodenkapazität ist aber ein Problem für den Opamp. 
+
+\subsubsection{Betrieb im Sperrbereich}
+\begin{wrapfigure}[4]{l}{0.25\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.22\textwidth]{images/photodiode_betrieb_02}
+\end{wrapfigure}
+Es liegt eine negative Spannung über der Photodiode. Die Diodenkapazität ist dadurch kleiner und die Schaltung schneller. Der Dunkelstrom $I_D$ steigt hingegen mit Spannung und Temperatur an. Er überlagert den Photostrom und bestimmt das Rauschen.
+
+\subsection{Phototransistor}
+Phototransistoren sind wesentlich empfindlicher als Photodioden, die Basis-Emitter-Diode ist eine Photodiode. Der Photostrom wird verstärkt mit dem Stromverstärkungsfaktor $\beta$. Allerdings sind sie viel langsamer als Photodioden.
+
+\subsection{Spektrale Empfindlichkeit}
+Silizium ist am empfindlichsten bei ca. 850nm, wird aber für gesamtes Spektrum von blau bis NIR (400nm – 900nm) genutzt. Andere Wellenlängen bedingen aufwändigere Herstellungsprozesse mit zusätzlichen Dotierungen.
+
+\subsubsection{Eindringtiefe der Photonen}
+Je nach Wellenlänge dringt das Licht mehr oder weniger tief ins Halbleitermaterial ein. Bei Silizium ergeben sich z.B. folgende Eindringtiefen:
+\begin{compactitem}
+    \item blau, $400nm$: $a = 2*10^4cm^{-1}$ $\rightarrow$ $d=500nm$
+    \item rot, $700nm$: $a = 5*10^3cm^{-1}$ $\rightarrow$ $d=2um$
+    \item infrarot, $1000nm$: $a = 3*10^2cm^{-1}$ $\rightarrow$ $d=33um$
+\end{compactitem}
+
+\subsubsection{CMOS-IC-Prozesse mit Fotodioden}
+\begin{multicols}{4}
+    \includegraphics[width=0.24\textwidth]{images/eindringtiefe_01}
+    Standard Diode in jedem Prozess vorhanden, maximum bei Rot \\
+    \includegraphics[width=0.24\textwidth]{images/eindringtiefe_02}
+    Zweite Diode näher an der Si-Oberfläche, bessere Blau-Empfindlichkeit \\
+    \includegraphics[width=0.24\textwidth]{images/eindringtiefe_03}
+    Low-doped NWell: Depletionszone tiefer im Substrat, mehr IR-Empfindlichkeit \\
+    \includegraphics[width=0.24\textwidth]{images/eindringtiefe_04}
+    Sehr dünne, oberflächennahe Implantierung, Blau-und UV-Empfindlich (DVD, Blueray-Empfänger)
+\end{multicols}
+
+Für kürzere Wellenlängen (UV+Röntgen) wird ein Scintillator-Kristall(z.B. CäsiumIodidCsI) auf die Diode aufgebracht: Die Strahlung regt den Kristall an, welcher dann bei einer längeren Wellenlänge im sichtbaren Bereich leuchtet.
