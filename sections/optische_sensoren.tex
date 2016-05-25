@@ -102,3 +102,48 @@ Photonen werden in der vollständig verarmten intrinsischen i-Schicht absorbiert
     \includegraphics[width=0.49\textwidth]{images/ccd_fullframe}
     Die komplette Sensorfläche ist lichtaktiv. Er ist ideal für eine maximale Helligkeitsempfindlichkeit und er besitzt keine vertikalen Schieberegister. 
 \end{multicols}
+
+\subsubsection{Farb-Filter}
+\begin{wrapfigure}[7]{l}{0.25\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.24\textwidth]{images/ccd_filter}
+\end{wrapfigure}
+Die meisten Sensoren werden mit einem optischen Filter betrieben. Ein oft eingesetzter Filter basiert auf dem Bayer-Pattern. Dieses enthält 50\% grüne, 25\% blaue und 25\% rote Farbfilter. Ein De-Mosaicing ist anschliessend noch nötig. \\
+In einer Alternativlösung wird anstelle eines Filters die unterschiedliche Eindringtiefe von Licht mit unterschiedlicher Wellenlänge ausgenutzt. Dabei besteht ein Pixel aus 3 gestackten Fotodioden. Dabei geht kein Licht verloren, die Separation ist aber schlecht.
+
+\subsection{CMOS-Bildsensoren}
+\subsubsection{Active Pixel Sensor (APS)}
+\begin{wrapfigure}[15]{l}{0.25\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.24\textwidth]{images/cmos_aps}
+    \includegraphics[width=0.24\textwidth]{images/cmos_aps_aufbau}
+\end{wrapfigure}
+Die Umwandlung von Ladung in Spannung geschieht innerhalb des Pixels. Jedes Pixel hat deshalb seine eigene Auslese-Elektronik. Dadurch ist ein flexibles auslesen (Region-of-Interest (ROI)) möglich. 
+\paragraph{Funktionsweise}
+Eine Zelle besteht aus einer Photodiode und 3 NMOS-Transistoren. Die Photodiode wird im Reset auf eine hohe Spannung gesetzt. Der Photostrom entlädt die Diodenkapazität, dies führt zu einer Integration des Photostromes während der Integrationszeit. Der Source-Follower-Transistor ($M_{sf}$) folgt der Diodenspannung (verschoben um konstante Spannung $V_{TH}$). Nach der Integrationszeit wird die Spannung am Pixel über den Source-Follower gemessen und über $M_{sel}$ ausgelesen. Jeweils eine ganze Zeile wird mit dem Reset-Transistor zurückgesetzt. Mit dem Selekt-Transistor wird eine einzelne Zeile aus dem Bildfeld angewählt. Jede Ausgangskolonne hat einen eigenen Kolonnen-Verstärker. Teilweise wandeln Kolonnen-ADC's das Signal direkt in ein digitales Signal um. Ein Kolonnenmultiplexer selektiert am Schluss eine Kolonne nach der anderen und gibt das Signal an den Ausgang aus. \\
+
+\paragraph{Rauschen im Pixel}
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.43\textwidth]{images/cmos_aps_pinned}
+\end{wrapfigure}
+Wird ein Knoten über einen Transistor auf ein Potential gesetzt und der Transistor danach geöffnet, so ist das Potential auf dem Knoten rauschbehaftet. Die Rauschspannung kann dabei folgendermassen berechnet werden: $V_{n, kTC} = \sqrt{\frac{kT}{C}}$. Die Anzahl der Rauschelektronen kann ebenfalls bestimmt werden: $n_{n, kTC} = \frac{\sqrt{kT*C}}{q}$ \\
+Dies kann verhindert werden indem durch einen zusätzlichen Layer $p++$ die Photodiode gepinnt wird. Dabei ist die Photodiode vom Ausleseknoten über das Gate TX getrennt. Wird TX auf high gesetzt, fliesst alle Ladung in den Ausleseknoten. Dies erlaubt Correlated Double Sampling (CDS) und eliminiert das Reset-oder $\frac{kT}{C}$-Rauschen.
+
+\paragraph{Global Shutter Pixel}
+Bei einem Rolling Shutter Pixel werden sich schnell bewegende Objekte falsch aufgenommen. Aus diesem Grund gibt es Global Shutter Pixel. Diese haben einen zusätzlichen Sense-Node (SN). Bei dieser Art werden alle Pixel gleichzeitig zurückgesetzt und die integrierte Ladung aller Pixel werden gleichzeitig auf den Sense-Node übertragen. Dabei integrieren alle Pixel über den exakt selben Zeitraum, die Bewegungen werden eingefroren. Ein Nachteil ist, dass die Photodiode kleiner wird bei gleichbleibender Pixelfläche.
+
+\begin{wrapfigure}[15]{l}{0.5\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.48\textwidth]{images/cmos_iluminated}
+\end{wrapfigure}
+\paragraph{Front- und Back-illuminated CMOS}
+\begin{compactitem}
+    \item Front-illuminated Sensoren: Metall-Verbindungen absorbieren Licht 
+    \item Back-illuminated Sensoren: Höhere Lichtausbeute
+\end{compactitem}
+
