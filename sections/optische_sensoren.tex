@@ -63,3 +63,42 @@ Je nach Wellenlänge dringt das Licht mehr oder weniger tief ins Halbleitermater
 \end{multicols}
 
 Für kürzere Wellenlängen (UV+Röntgen) wird ein Scintillator-Kristall(z.B. CäsiumIodidCsI) auf die Diode aufgebracht: Die Strahlung regt den Kristall an, welcher dann bei einer längeren Wellenlänge im sichtbaren Bereich leuchtet.
+
+\subsection{Avalanche-Photodioden}
+\begin{wrapfigure}[11]{l}{0.35\textwidth}
+    \vspace{-12pt}
+    \centering
+    \includegraphics[width=0.34\textwidth]{images/apd}
+\end{wrapfigure}
+Avalanche-Photodioden sind hochempfindlich und schnell. Sie nutzen den inneren photoelektrischen Effekt zur Ladungsträgererzeugung und den Lawinendurchbruch (Avalanche-Effekt) zur internen Verstärkung. Eine Detektierung von sehr geringer Strahlung ist möglich (bis hin zu einzelnen Photonen). Die spektrale Empfindlichkeit liegt je nach verwendetem Material in einem Bereich von ca. 250 – 1700nm.
+\subsubsection{Aufbau}
+Photonen werden in der vollständig verarmten intrinsischen i-Schicht absorbiert und erzeugen dort Ladungsträgerpaare. In einer Si-APD werden die Elektronen zur Multiplikationszone hin beschleunigt und verursachen dort die Ladungslawine.
+
+\subsection{CCD (Charge-Coupled-Device)}
+\subsubsection{Funktionsweise}
+\begin{multicols}{3}
+    \includegraphics[width=0.32\textwidth]{images/ccd_01}
+    Elektronen werden angezogen unter (rote) Elektroden mit pos. Spannung \\
+    \includegraphics[width=0.32\textwidth]{images/ccd_02}
+    Benachbarte Elektroden aktiviert: Elektronen verteilen sich unter 2 Elektroden \\
+    \includegraphics[width=0.32\textwidth]{images/ccd_03}
+    Linke Elektrode deaktiviert, Elektronen sammeln sich unter nächster Elektrode \\
+\end{multicols}
+\begin{multicols}{3}
+    \includegraphics[width=0.32\textwidth]{images/ccd_04}
+    Benachbarte Elektroden aktiviert, Elektronen verteilen sich wieder unter 2 Elektroden \\
+    \includegraphics[width=0.32\textwidth]{images/ccd_05}
+    Elektronen sind am Rand des Schieberegisters, Weiterverarbeitung mit Ladungsverstärker, ADC \\
+    Die Frequenz, wie oft der Sensor pro Sekunde der in der Lage ist, die Ladung um einen Pixel weiter zu transportieren, wird "Pixel clock" genannt. Die Frequenzen, mit den CCDs heute betrieben werden, betragen rund 25 bis 50 MHz. \\ \ \\ \ \\ \ \\
+\end{multicols}
+
+\subsubsection{Auslesevarianten}
+\begin{multicols}{2}
+    \paragraph{Interline Transfer Sensor}
+    \includegraphics[width=0.39\textwidth]{images/ccd_interline} \\
+    Bei dieser Variante erfolgt eine Trennung von Pixel und Speicherzellen. Der fillfactor des Sensors beträgt nur etwa 30 Prozent. Mikrolinsen helfen aber die Lichtausbeute zu erhöhen.
+    
+    \paragraph{Fullframe Transfer Sensor}
+    \includegraphics[width=0.49\textwidth]{images/ccd_fullframe}
+    Die komplette Sensorfläche ist lichtaktiv. Er ist ideal für eine maximale Helligkeitsempfindlichkeit und er besitzt keine vertikalen Schieberegister. 
+\end{multicols}
