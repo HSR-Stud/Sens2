@@ -5,9 +5,9 @@ Trifft Licht auf die fotoempfindliche Fläche des Fotowiderstands, verringert si
 
 \subsubsection{Photodiode}
 \begin{wrapfigure}[14]{l}{0.5\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
-    \includegraphics[width=0.48\textwidth]{images/photodiode}
+    \includegraphics[width=0.42\textwidth]{images/photodiode}
 \end{wrapfigure}
 Treffen Photonen mit ausreichender Energie auf einen pn-Übergang, so werden Ladungsträger (Elektron-Loch-Paare) erzeugt. In der Raumladungszone driften die Ladungsträger schnell entgegen der Diffusionsspannung in die gleichartig dotierten Zonen, und führen zu einem Strom. Ohne externe Verbindung der Anschlüsse entsteht an diesen eine messbare Spannung gleicher Polarität wie die Durchflussspannung (Sättigung). Sind die Anschlüsse miteinander elektrisch verbunden oder befinden sie sich an einer Spannung in Sperrrichtung der Diode, fliesst ein Photostrom, der proportional zum Lichteinfall ist. Die Photonen müssen eine höhere Energie als die des Bandabstandes aufweisen, um diesen Effekt hervorzurufen.
 
@@ -22,7 +22,7 @@ Eine Photodiode kann als Solarzelle betrieben werden. Dabei gibt es die folgende
 \subsection{Photodiode als Lichtsensor}
 \subsubsection{Betrieb im Quasi-Kurzschluss (U = 0)}
 \begin{wrapfigure}[5]{l}{0.25\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
     \includegraphics[width=0.22\textwidth]{images/photodiode_betrieb_01}
 \end{wrapfigure}
@@ -30,7 +30,7 @@ Der Photo-Strom wird in Sperrrichtung erzeugt und ist linear abhängig von der B
 
 \subsubsection{Betrieb im Sperrbereich}
 \begin{wrapfigure}[4]{l}{0.25\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
     \includegraphics[width=0.22\textwidth]{images/photodiode_betrieb_02}
 \end{wrapfigure}
@@ -66,9 +66,9 @@ Für kürzere Wellenlängen (UV+Röntgen) wird ein Scintillator-Kristall(z.B. C�
 
 \subsection{Avalanche-Photodioden}
 \begin{wrapfigure}[11]{l}{0.35\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
-    \includegraphics[width=0.34\textwidth]{images/apd}
+    \includegraphics[width=0.25\textwidth]{images/apd}
 \end{wrapfigure}
 Avalanche-Photodioden sind hochempfindlich und schnell. Sie nutzen den inneren photoelektrischen Effekt zur Ladungsträgererzeugung und den Lawinendurchbruch (Avalanche-Effekt) zur internen Verstärkung. Eine Detektierung von sehr geringer Strahlung ist möglich (bis hin zu einzelnen Photonen). Die spektrale Empfindlichkeit liegt je nach verwendetem Material in einem Bereich von ca. 250 – 1700nm.
 \subsubsection{Aufbau}
@@ -105,7 +105,7 @@ Photonen werden in der vollständig verarmten intrinsischen i-Schicht absorbiert
 
 \subsubsection{Farb-Filter}
 \begin{wrapfigure}[7]{l}{0.25\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
     \includegraphics[width=0.24\textwidth]{images/ccd_filter}
 \end{wrapfigure}
@@ -115,35 +115,35 @@ In einer Alternativlösung wird anstelle eines Filters die unterschiedliche Eind
 \subsection{CMOS-Bildsensoren}
 \subsubsection{Active Pixel Sensor (APS)}
 \begin{wrapfigure}[15]{l}{0.25\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
     \includegraphics[width=0.24\textwidth]{images/cmos_aps}
-    \includegraphics[width=0.24\textwidth]{images/cmos_aps_aufbau}
+    \includegraphics[width=0.15\textwidth]{images/cmos_aps_aufbau}
 \end{wrapfigure}
 Die Umwandlung von Ladung in Spannung geschieht innerhalb des Pixels. Jedes Pixel hat deshalb seine eigene Auslese-Elektronik. Dadurch ist ein flexibles auslesen (Region-of-Interest (ROI)) möglich. 
 \paragraph{Funktionsweise}
 Eine Zelle besteht aus einer Photodiode und 3 NMOS-Transistoren. Die Photodiode wird im Reset auf eine hohe Spannung gesetzt. Der Photostrom entlädt die Diodenkapazität, dies führt zu einer Integration des Photostromes während der Integrationszeit. Der Source-Follower-Transistor ($M_{sf}$) folgt der Diodenspannung (verschoben um konstante Spannung $V_{TH}$). Nach der Integrationszeit wird die Spannung am Pixel über den Source-Follower gemessen und über $M_{sel}$ ausgelesen. Jeweils eine ganze Zeile wird mit dem Reset-Transistor zurückgesetzt. Mit dem Selekt-Transistor wird eine einzelne Zeile aus dem Bildfeld angewählt. Jede Ausgangskolonne hat einen eigenen Kolonnen-Verstärker. Teilweise wandeln Kolonnen-ADC's das Signal direkt in ein digitales Signal um. Ein Kolonnenmultiplexer selektiert am Schluss eine Kolonne nach der anderen und gibt das Signal an den Ausgang aus. \\
 
-\paragraph{Rauschen im Pixel}
-\begin{wrapfigure}[15]{r}{0.45\textwidth}
-    \vspace{-12pt}
-    \centering
-    \includegraphics[width=0.43\textwidth]{images/cmos_aps_pinned}
-\end{wrapfigure}
-Wird ein Knoten über einen Transistor auf ein Potential gesetzt und der Transistor danach geöffnet, so ist das Potential auf dem Knoten rauschbehaftet. Die Rauschspannung kann dabei folgendermassen berechnet werden: $V_{n, kTC} = \sqrt{\frac{kT}{C}}$. Die Anzahl der Rauschelektronen kann ebenfalls bestimmt werden: $n_{n, kTC} = \frac{\sqrt{kT*C}}{q}$ \\
-Dies kann verhindert werden indem durch einen zusätzlichen Layer $p++$ die Photodiode gepinnt wird. Dabei ist die Photodiode vom Ausleseknoten über das Gate TX getrennt. Wird TX auf high gesetzt, fliesst alle Ladung in den Ausleseknoten. Dies erlaubt Correlated Double Sampling (CDS) und eliminiert das Reset-oder $\frac{kT}{C}$-Rauschen.
-
 \paragraph{Global Shutter Pixel}
 Bei einem Rolling Shutter Pixel werden sich schnell bewegende Objekte falsch aufgenommen. Aus diesem Grund gibt es Global Shutter Pixel. Diese haben einen zusätzlichen Sense-Node (SN). Bei dieser Art werden alle Pixel gleichzeitig zurückgesetzt und die integrierte Ladung aller Pixel werden gleichzeitig auf den Sense-Node übertragen. Dabei integrieren alle Pixel über den exakt selben Zeitraum, die Bewegungen werden eingefroren. Ein Nachteil ist, dass die Photodiode kleiner wird bei gleichbleibender Pixelfläche.
 
-\begin{wrapfigure}[15]{l}{0.5\textwidth}
-    \vspace{-12pt}
+\newpage
+\paragraph{Rauschen im Pixel}
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+    %\vspace{-12pt}
     \centering
-    \includegraphics[width=0.48\textwidth]{images/cmos_iluminated}
+    \includegraphics[width=0.42\textwidth]{images/cmos_aps_pinned}
 \end{wrapfigure}
-\paragraph{Front- und Back-illuminated CMOS}
-\begin{compactitem}
-    \item Front-illuminated Sensoren: Metall-Verbindungen absorbieren Licht 
-    \item Back-illuminated Sensoren: Höhere Lichtausbeute
-\end{compactitem}
+Wird ein Knoten über einen Transistor auf ein Potential gesetzt und der Transistor danach geöffnet, so ist das Potential auf dem Knoten rauschbehaftet. Die Rauschspannung kann dabei folgendermassen berechnet werden: $V_{n, kTC} = \sqrt{\frac{kT}{C}}$. Die Anzahl der Rauschelektronen kann ebenfalls bestimmt werden: $n_{n, kTC} = \frac{\sqrt{kT*C}}{q}$ \\
+Dies kann verhindert werden indem durch einen zusätzlichen Layer $p++$ die Photodiode gepinnt wird. Dabei ist die Photodiode vom Ausleseknoten über das Gate TX getrennt. Wird TX auf high gesetzt, fliesst alle Ladung in den Ausleseknoten. Dies erlaubt Correlated Double Sampling (CDS) und eliminiert das Reset-oder $\frac{kT}{C}$-Rauschen.
+\\
+\begin{multicols}{2}
+    \includegraphics[width=0.48\textwidth]{images/cmos_iluminated} 
+    \paragraph{Front- und Back-illuminated CMOS}
+    \begin{compactitem}
+        \item Front-illuminated Sensoren: Metall-Verbindungen absorbieren Licht 
+        \item Back-illuminated Sensoren: Höhere Lichtausbeute
+    \end{compactitem}
+\end{multicols}
+
 

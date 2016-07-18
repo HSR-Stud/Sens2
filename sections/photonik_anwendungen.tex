@@ -66,6 +66,7 @@
         \item Aktive Beleuchtung nötig
         \item Keine Abschattung
     \end{compactitem}
+    \ \\
     
     \paragraph{Triangulation}
     \begin{compactitem}
@@ -73,20 +74,22 @@
         \item Keine Struktur nötig
         \item Relativ einfache Berechnung
     \end{compactitem}
+    \ \\
     
     \paragraph{Interferometrie}
     \begin{compactitem}
         \item Höchste Auflösung
         \item Aufwändige Technik
     \end{compactitem}
+    \ \\ \ \\ \ \\
 \end{multicols}
 
-
+\newpage
 \subsubsection{Stereo Messung}
 \begin{wrapfigure}[6]{l}{0.3\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
-    \includegraphics[width=0.29\textwidth]{images/photonik_anwendung_stereo}
+    \includegraphics[width=0.25\textwidth]{images/photonik_anwendung_stereo}
 \end{wrapfigure}
 \ 
 \vspace{-5pt}
@@ -99,9 +102,9 @@
 
 \subsubsection{Triangulations Messung}
 \begin{wrapfigure}[4]{l}{0.3\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
-    \includegraphics[width=0.15\textwidth, angle=90]{images/photonik_anwendung_triangulation}
+    \includegraphics[width=0.1\textwidth, angle=90]{images/photonik_anwendung_triangulation}
 \end{wrapfigure}
 \ 
 \vspace{-5pt}
@@ -122,7 +125,7 @@
 
 \paragraph{Funktionsweise}
 \begin{wrapfigure}[4]{l}{0.3\textwidth}
-    \vspace{-12pt}
+    %\vspace{-12pt}
     \centering
     \includegraphics[width=0.29\textwidth]{images/tof_fkt_01}
     \includegraphics[width=0.29\textwidth]{images/tof_fkt_02}
@@ -139,20 +142,21 @@
     \item Daraus kann die Distanz berechnet werden. \\
 \end{compactenum}
 
+\ \\
 \subsection{Optische Datenübertragung}
 \subsubsection{Vorteile}
 \begin{compactitem}
     \item Licht anstelle eines elektrischen Signals als Übertragungsmedium
     \item Störungsarm: kein elektrisches Einkoppeln, kein Übersprechen, keine Potentialprobleme
     \item Kleine Dämpfung, grosse Reichweite
-    \item Grosse Bandbreite: > 100Gbit/s
+    \item Grosse Bandbreite: $>$ 100Gbit/s
 \end{compactitem}
 
 \subsubsection{Glasfaserarten}
-\begin{wrapfigure}[15]{l}{0.6\textwidth}
-    \vspace{-12pt}
+\begin{wrapfigure}[14]{l}{0.6\textwidth}
+    %\vspace{-12pt}
     \centering
-    \includegraphics[width=0.6\textwidth]{images/glasfaserarten}
+    \includegraphics[width=0.55\textwidth]{images/glasfaserarten}
 \end{wrapfigure}
 \ 
 \vspace{-5pt}
@@ -166,4 +170,31 @@
     \item Monomode(gelb), \\
     Ø $<$10$\mu$m, \\
     höchste Datenrate
+\end{compactitem}
+\ \\
+
+\subsubsection{Glasfaser als Sensor}
+\begin{multicols}{2}
+    \paragraph{Faserkreisel}
+    \begin{compactitem}
+        \item Bei Ruhe: Lichtwege sind identisch, konstruktive Interferenz
+        \item Bei Drehung: der eine Lichtweg wird etwas kürzer, der andere länger, destruktive Interferenz, resp. das Linienmuster verschiebt sich
+    \end{compactitem}
+    
+    \paragraph{Faseroptische Druck-und Temperatursensoren}
+    \begin{compactitem}
+        \item Durch Druck oder Temperatur ändert sich die (Raman-) Reflexionan dieser Stelle, örtlich aufgelöste Messung
+        \item Wird eingesetzt bei Staumauern, Flugzeugflügel, ...
+        \item Einfacher Sensor, «aber teure Auswertung
+    \end{compactitem}
+\end{multicols}
+
+\subsection{Kontaktlose Temperaturmessung mittels Infrarotstrahlung}
+\subsubsection{Seebeck-Effekt}
+\begin{compactitem}
+    \item Der Seebeck-Effekt tritt auf bei Temperaturdifferenzen in Leitern.
+    \item Am warmen Ende eines Leiters haben Elektronen mehr Energie als am kalten Ende.
+    \item Die Beweglichkeit der Elektronen ist grösser.
+    \item Durch Diffusion bewegen sich mehr energiereiche Elektronen zum kalten Ende als energiearme Elektronen in die entgegengesetzte Richtung.
+    \item Durch diese Thermodiffusionsströme entsteht zwischen den Kontaktstellen eine elektrische Spannung, die Thermo- oder Seebeck-Spannung.
 \end{compactitem}

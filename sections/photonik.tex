@@ -44,9 +44,9 @@ Erhöhung der elektrischen Leitfähigkeit von Halbleitermaterialien aufgrund der
 \paragraph{photovoltaischerEffekt}
 Ladungsträgerpaare, die in der Raumladungszone, also am p-n-Übergang einer Photodiode entstehen, werden in p-und n-Schicht getrennt. Die Elektronen gehen in die n-Schicht über, die Löcher in die p-Schicht. Es entsteht ein Photostrom gegen die Durchlassrichtung des p-n-Übergangs.
 
+\begin{multicols}{2}
 \subsection{Photometrie}
 \subsubsection{Empfindlichkeit des Auges}
-\begin{multicols}{2}
 Bei einer Wellenlänge von 555 nm, einer gelb-grünen Spektralfarbe entsprechend, ist das Auge am empfindlichsten. Bei etwa 510 nm (grün) auf der einen Seite, und bei etwa 610 nm (orangerot) auf der anderen Seite des Maximums erreicht das Auge nur noch die halbe Empfindlichkeit. Bei 665 nm, der Farbe typischer roter Leuchtdioden, beträgt die Empfindlichkeit nur 4,5 Prozent derjenigen bei 555 nm. Bei etwa 380 nm (violett) bzw. 780 nm (tiefrot) ist die Empfindlichkeit fast Null. \\ \\
 Der in Watt gemessene Strahlungsstrom muss mit der wellenlängenabhängigen Empfindlichkeitskurve des Auges gewichtet werden, um aus der physikalischen Lichtleistung ein quantitatives Mass für den im Auge erzeugten Lichtreiz zu erhalten.
 \includegraphics[width=0.5\textwidth]{images/empfindlichkeit_auge} 
@@ -72,4 +72,12 @@ genannt und mit $E_e$ bezeichnet. Die Einheit dafür ist $Wm^{-2}$. \\
 Das Lux (Einheit $lx$) ist die SI-Einheit der Beleuchtungsstärke. Entsprechend ist die Beleuchtungsstärke der pro Flächeneinheit einfallende Lichtstrom. Sie wird mit $E_v$ bezeichnet und hat die Einheit $\frac{lm}{m^{-2}}$.
 
 \subsubsection{Übersicht}
-\includegraphics[width=1\textwidth]{images/uebersicht_licht} 
+\begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+    \multicolumn{3}{|l|}{Strahlungsphysikalische Grössen} & \multicolumn{3}{l|}{Lichttechnische Grössen} \\ \hline
+    Grösse             & Symbol   & Einheit          & Grösse             & Symbol & Einheit      \\ \hline
+    Strahlungsstrom    & $\Phi_e$ & $W$              & Lichtstrom         & $\Phi_v$ & $lm$       \\ \hline
+    Strahlstärke       & $I_e$    & $Wsr^{-1}$       & Lichtstärke        & $I_v$    & $cd$       \\ \hline
+    Strahldichte       & $L_e$    & $Wm^{-2}sr^{-1}$ & Leuchtdichte       & $L_v$    & $cdm^{-2}$ \\ \hline
+    Bestrahlungsstärke & $E_e$    & $Wm^{-2}$        & Beleuchtungsstärke & $E_v$    & $lx$       \\ \hline
+\end{tabular}
