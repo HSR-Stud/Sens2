@@ -1,7 +1,7 @@
 \section{Photonik Sensoren}
 \subsection{Helligkeits-Sensoren}
 \subsubsection{Fotowiderstände LDR (Light Dependent Resistor)}
-Trifft Licht auf die fotoempfindliche Fläche des Fotowiderstands, verringert sich der Widerstand durch den inneren fotoelektrischen Effekt. Der Dunkelwiderstand wird erst nach $\frac{1}{60}s$ wieder erreicht.
+Trifft Licht auf die fotoempfindliche Fläche des Fotowiderstands, verringert sich der Widerstand durch den inneren fotoelektrischen Effekt. D.h. ein eintreffendes Photon hebt ein Elektron in das Leitungsband, welches sich nun frei im Kristall bewegen kann: Das Material wird niederohmiger. LDR's haben den Nachteil, dass sie ziemlich wärmeempfindlich und träge sind (Der Dunkelwiderstand wird erst nach $\frac{1}{60}s$ wieder erreicht).
 
 \subsubsection{Photodiode}
 \begin{wrapfigure}[14]{l}{0.5\textwidth}
@@ -9,7 +9,7 @@ Trifft Licht auf die fotoempfindliche Fläche des Fotowiderstands, verringert si
     \centering
     \includegraphics[width=0.42\textwidth]{images/photodiode}
 \end{wrapfigure}
-
+Treffen Photonen mit ausreichender Energie auf einen pn-Übergang, so werden Ladungsträger (Elektron-Loch-Paare) erzeugt. In der Raumladungszone driften die Ladungsträger schnell entgegen der Diffusionsspannung in die gleichartig dotierten Zonen, und führen zu einem Strom. Ohne externe Verbindung der Anschlüsse entsteht an diesen eine messbare Spannung gleicher Polarität wie die Durchflussspannung (Sättigung). Sind die Anschlüsse miteinander elektrisch verbunden oder befinden sie sich an einer Spannung in Sperrrichtung der Diode, fliesst ein Photostrom, der proportional zum Lichteinfall ist. Die Photonen müssen eine höhere Energie als die des Bandabstandes aufweisen, um diesen Effekt hervorzurufen.
 
 \subsection{Solarzellen}
 Eine Photodiode kann als Solarzelle betrieben werden. Dabei gibt es die folgenden Betriebsmodi:
@@ -76,13 +76,21 @@ Photonen werden in der vollständig verarmten intrinsischen i-Schicht absorbiert
 
 \subsection{CCD (Charge-Coupled-Device)}
 \subsubsection{Funktionsweise}
-\begin{minipage}{0.3\textwidth} 
-    \includegraphics[width=1\textwidth]{images/ccd_01}
-\end{minipage}
-\begin{minipage}{0.6\textwidth}
+\begin{multicols}{3}
+    \includegraphics[width=0.32\textwidth]{images/ccd_01}
+    Elektronen werden angezogen unter (rote) Elektroden mit pos. Spannung \\
+    \includegraphics[width=0.32\textwidth]{images/ccd_02}
+    Benachbarte Elektroden aktiviert: Elektronen verteilen sich unter 2 Elektroden \\
+    \includegraphics[width=0.32\textwidth]{images/ccd_03}
+    Linke Elektrode deaktiviert, Elektronen sammeln sich unter nächster Elektrode \\
+\end{multicols}
+\begin{multicols}{3}
+    \includegraphics[width=0.32\textwidth]{images/ccd_04}
+    Benachbarte Elektroden aktiviert, Elektronen verteilen sich wieder unter 2 Elektroden \\
+    \includegraphics[width=0.32\textwidth]{images/ccd_05}
     Elektronen sind am Rand des Schieberegisters, Weiterverarbeitung mit Ladungsverstärker, ADC \\
     Die Frequenz, wie oft der Sensor pro Sekunde der in der Lage ist, die Ladung um einen Pixel weiter zu transportieren, wird "Pixel clock" genannt. Die Frequenzen, mit den CCDs heute betrieben werden, betragen rund 25 bis 50 MHz. \\ \ \\ \ \\ \ \\
-\end{minipage}
+\end{multicols}
 
 \subsubsection{Auslesevarianten}
 \begin{multicols}{2}
@@ -106,38 +114,36 @@ In einer Alternativlösung wird anstelle eines Filters die unterschiedliche Eind
 
 \subsection{CMOS-Bildsensoren}
 \subsubsection{Active Pixel Sensor (APS)}
-\hfill
-\begin{minipage}{0.25\textwidth}
-    \vspace{0pt}
-    \includegraphics[width=1.0\textwidth]{images/cmos_aps_aufbau}
-\end{minipage}
-\begin{minipage}{0.65\textwidth}
+\begin{wrapfigure}[15]{l}{0.25\textwidth}
+    %\vspace{-12pt}
+    \centering
+    \includegraphics[width=0.24\textwidth]{images/cmos_aps}
+    \includegraphics[width=0.15\textwidth]{images/cmos_aps_aufbau}
+\end{wrapfigure}
+Die Umwandlung von Ladung in Spannung geschieht innerhalb des Pixels. Jedes Pixel hat deshalb seine eigene Auslese-Elektronik. Dadurch ist ein flexibles auslesen (Region-of-Interest (ROI)) möglich. 
 \paragraph{Funktionsweise}
-Eine Zelle besteht aus einer Photodiode und 3 NMOS-Transistoren. Die Photodiode wird im Reset auf eine hohe Spannung gesetzt. Der Photostrom entlädt die Diodenkapazität, dies führt zu einer Integration des Photostromes während der Integrationszeit. Der Source-Follower-Transistor ($M_{sf}$) folgt der Diodenspannung (verschoben um konstante Spannung $V_{TH}$). Nach der Integrationszeit wird die Spannung am Pixel über den Source-Follower gemessen und über $M_{sel}$ ausgelesen. Jeweils eine ganze Zeile wird mit dem Reset-Transistor zurückgesetzt. Mit dem Selekt-Transistor wird eine einzelne Zeile aus dem Bildfeld angewählt.
-\end{minipage}
+Eine Zelle besteht aus einer Photodiode und 3 NMOS-Transistoren. Die Photodiode wird im Reset auf eine hohe Spannung gesetzt. Der Photostrom entlädt die Diodenkapazität, dies führt zu einer Integration des Photostromes während der Integrationszeit. Der Source-Follower-Transistor ($M_{sf}$) folgt der Diodenspannung (verschoben um konstante Spannung $V_{TH}$). Nach der Integrationszeit wird die Spannung am Pixel über den Source-Follower gemessen und über $M_{sel}$ ausgelesen. Jeweils eine ganze Zeile wird mit dem Reset-Transistor zurückgesetzt. Mit dem Selekt-Transistor wird eine einzelne Zeile aus dem Bildfeld angewählt. Jede Ausgangskolonne hat einen eigenen Kolonnen-Verstärker. Teilweise wandeln Kolonnen-ADC's das Signal direkt in ein digitales Signal um. Ein Kolonnenmultiplexer selektiert am Schluss eine Kolonne nach der anderen und gibt das Signal an den Ausgang aus. \\
 
+\paragraph{Global Shutter Pixel}
+Bei einem Rolling Shutter Pixel werden sich schnell bewegende Objekte falsch aufgenommen. Aus diesem Grund gibt es Global Shutter Pixel. Diese haben einen zusätzlichen Sense-Node (SN). Bei dieser Art werden alle Pixel gleichzeitig zurückgesetzt und die integrierte Ladung aller Pixel werden gleichzeitig auf den Sense-Node übertragen. Dabei integrieren alle Pixel über den exakt selben Zeitraum, die Bewegungen werden eingefroren. Ein Nachteil ist, dass die Photodiode kleiner wird bei gleichbleibender Pixelfläche.
 
+\newpage
 \paragraph{Rauschen im Pixel}
 \begin{wrapfigure}[15]{r}{0.45\textwidth}
     %\vspace{-12pt}
     \centering
     \includegraphics[width=0.42\textwidth]{images/cmos_aps_pinned}
 \end{wrapfigure}
-Die Rauschspannung kann dabei folgendermassen berechnet werden: $V_{n, kTC} = \sqrt{\frac{kT}{C}}$. Die Anzahl der Rauschelektronen kann ebenfalls bestimmt werden: $n_{n, kTC} = \frac{\sqrt{kT*C}}{q}$ \\
+Wird ein Knoten über einen Transistor auf ein Potential gesetzt und der Transistor danach geöffnet, so ist das Potential auf dem Knoten rauschbehaftet. Die Rauschspannung kann dabei folgendermassen berechnet werden: $V_{n, kTC} = \sqrt{\frac{kT}{C}}$. Die Anzahl der Rauschelektronen kann ebenfalls bestimmt werden: $n_{n, kTC} = \frac{\sqrt{kT*C}}{q}$ \\
 Dies kann verhindert werden indem durch einen zusätzlichen Layer $p++$ die Photodiode gepinnt wird. Dabei ist die Photodiode vom Ausleseknoten über das Gate TX getrennt. Wird TX auf high gesetzt, fliesst alle Ladung in den Ausleseknoten. Dies erlaubt Correlated Double Sampling (CDS) und eliminiert das Reset-oder $\frac{kT}{C}$-Rauschen.
 \\
-
-
-\begin{minipage}{0.45\textwidth}
-    \vspace{0pt}
-    \includegraphics[width=1.0\textwidth]{images/cmos_iluminated}
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
+\begin{multicols}{2}
+    \includegraphics[width=0.48\textwidth]{images/cmos_iluminated} 
     \paragraph{Front- und Back-illuminated CMOS}
     \begin{compactitem}
         \item Front-illuminated Sensoren: Metall-Verbindungen absorbieren Licht 
         \item Back-illuminated Sensoren: Höhere Lichtausbeute
     \end{compactitem}
-\end{minipage}
+\end{multicols}
 
 

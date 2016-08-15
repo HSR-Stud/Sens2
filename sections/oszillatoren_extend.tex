@@ -1,28 +1,27 @@
+\newpage
 \section {Oszillatoren}
-\subsection {Definition und Klassifikation von Oszillatoren \normalfont{\small{(Skript S.6-2)}}} 
+\subsection {Definition und Klassifikation von Oszillatoren} 
 \raggedright
 
-Oszillatoren werden in zwei Hauptgruppen unterteilt:
-\begin{compactitem}
-    \item \textbf{Abgestimmte} Oszillatoren aus einem Verstärker und einem Frequenz bestimmenden Newtzwerk, die in \textbf{positiver} Rückkopplung betrieben werden.
-    \item \textbf{Nichtabgestimmte} oder schaltende Oszillatoren bestehen dagegen aus einem Schaltelement mit mindestens zwei stabilen Zuständen (\textbf{Multivibrator}) und einem Integrator oder Tiefpassfilter, welches zwischen den Zuständen des Schaltelementes umgeladen wird. Die Umladezeit des Integrators ist hier Frequenz bestimmend während die Amplitude üblicherweise durch die Pegel des Schaltelementes gegeben ist.
-\end{compactitem}
- 
-\centering
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=0.8\textwidth]{images/Klassifikation_Oszillatortypen}
-  \subcaption*{Klassifikation von Oszillatortypen}
-\end{figure}
+\begin{multicols}{2}
+    Oszillatoren werden in zwei Hauptgruppen unterteilt:
+    \begin{compactitem}
+        \item \textbf{Abgestimmte} Oszillatoren aus einem Verstärker und einem Frequenz bestimmenden Newtzwerk, die in \textbf{positiver} Rückkopplung betrieben werden.
+        \item \textbf{Nichtabgestimmte} oder schaltende Oszillatoren bestehen dagegen aus einem Schaltelement mit mindestens zwei stabilen Zuständen (\textbf{Multivibrator}) und einem Integrator oder Tiefpassfilter, welches zwischen den Zuständen des Schaltelementes umgeladen wird. Die Umladezeit des Integrators ist hier Frequenz bestimmend während die Amplitude üblicherweise durch die Pegel des Schaltelementes gegeben ist.
+    \end{compactitem}
+    
+    \includegraphics[width=0.54\textwidth]{images/Klassifikation_Oszillatortypen}
+    \ \\ \ \\ \ \\ \ \\
+\end{multicols}
 
 \FloatBarrier
-\subsection{Oszillatorgrundprinzipien\normalfont{(Skript S.6-4)}}
+\subsection{Oszillatorgrundprinzipien}
 \subsubsection{Die Rückkopplungsschleife (Feedback Loop) bei abgestimmten Oszillatoren}
 \begin{figure}[h!]
 	% minipage mit (Blind-)Text
 	\begin{minipage}{0.3\textwidth} 
 	  \includegraphics[width=1.0\textwidth]{images/Blockdiagramm_Oszillator}
-	  \subcaption*{Blockdiagramm eines Oszillators}
+	  %\subcaption*{Blockdiagramm eines Oszillators}
 	% \label{Text}
 	\end{minipage}
 	\begin{minipage}{0.4\textwidth}
@@ -30,9 +29,9 @@ Oszillatoren werden in zwei Hauptgruppen unterteilt:
         \text{\textbullet }A_cl(s) =\frac{A_(s)}{1-A(s) \cdot H(s)} = \frac{A(s)}{1-T(s)}
       \end{equation*}
       \begin{compactitem}
-        \item Schleifenverstärkung: $T(s)$\\
-        \item Für die Oszillations- oder Schwingbedingung gilt: $T(s)=1$\\
-        \item Für das Anschwingen gilt: $T(s)>1$\\ 
+        \item Schleifenverstärkung: $T(s)$
+        \item Für die Oszillations- oder Schwingbedingung gilt: $T(s)=1$
+        \item Für das Anschwingen gilt: $T(s)>1$
       \end{compactitem}
 	\end{minipage}
 \end{figure}
@@ -45,8 +44,8 @@ Die Schleifenverstärkung ist eine Funktion der Signalamplitude (nichtlinearer E
 \begin{figure}[h!]
 	% minipage mit (Blind-)Text
 	\begin{minipage}{0.4\textwidth} 
-	  \includegraphics[width=1\textwidth]{images/Pollage_Regelung}
-	  \subcaption*{Regelung der Pollage durch amplitudenabhängige Vertärkung}
+	  \includegraphics[width=0.9\textwidth]{images/Pollage_Regelung}
+	  %\subcaption*{Regelung der Pollage durch amplitudenabhängige Vertärkung}
 	\end{minipage}
 	\begin{minipage}{0.5\textwidth}
       \begin{compactenum}
@@ -61,7 +60,7 @@ Die Schleifenverstärkung ist eine Funktion der Signalamplitude (nichtlinearer E
 \end{figure}
 
 \FloatBarrier
-\subsection{Abgestimmte Oszillatoren\normalfont{\small{(Skript S.6-7)}}}
+\subsection{Abgestimmte Oszillatoren}
 \subsubsection{LC-Oszillatoren}
 \begin{figure}[h!]
 	% minipage mit (Blind-)Text
@@ -86,6 +85,7 @@ Die Schleifenverstärkung ist eine Funktion der Signalamplitude (nichtlinearer E
 \end{figure}
 
 \FloatBarrier
+\newpage
 \subsubsection{Colpitts-Ozsillator}
 \begin{figure}[h!]
 	% minipage mit (Blind-)Text
@@ -98,17 +98,17 @@ Die Schleifenverstärkung ist eine Funktion der Signalamplitude (nichtlinearer E
       \end{compactitem}
       \begin{equation*} 
         \begin{split} 
-           &T(s) = \frac{-A}{1+sR(C_1+C_2)+s^2LC_2+s^3RLC_1C_2}\\\\
-           &\omega _0 = \frac{1}{\sqrt{L\frac{C_1 C_2}{C_1+C_2}}}\\\\
+           &T(s) = \frac{-A}{1+sR(C_1+C_2)+s^2LC_2+s^3RLC_1C_2}\\
+           &\omega _0 = \frac{1}{\sqrt{L\frac{C_1 C_2}{C_1+C_2}}}\\
            &A =\frac{C_2}{C_1} \quad \quad \text{beim Anschwingen gilt:} \quad \quad A \geq\frac{C_2}{C_1} \\
-           &\text{(A = Amplitude)} \\\\
+           &\text{(A = Amplitude)} \\
         \end{split} 
       \end{equation*}
 	\end{minipage}
 \end{figure}
 
 \FloatBarrier
-\subsubsection{Quarz-Oszillator\normalfont{\small{(Skript S.6-8)}}}
+\subsubsection{Quarz-Oszillator}
 \begin{figure}[h!]
 	% minipage mit (Blind-)Text
 	\begin{minipage}{0.3\textwidth} 
@@ -145,14 +145,52 @@ Die Schleifenverstärkung ist eine Funktion der Signalamplitude (nichtlinearer E
       \end{compactitem}
       \begin{equation*} 
         \begin{split} 
-         & Z (\omega)=\frac{s^2+\omega _s ^2}{sC_p(s^2+\omega_p ^2)} \quad \text{für } Z(s) = jX(\omega): \quad X(\omega)=-\frac{1}{\omega C_p}\cdot \frac{\omega^2-\omega_s ^2}{\omega^2-\omega_p ^2}\\\\
+         & Z (\omega)=\frac{s^2+\omega _s ^2}{sC_p(s^2+\omega_p ^2)} \quad \text{für } Z(s) = jX(\omega): \quad X(\omega)=-\frac{1}{\omega C_p}\cdot \frac{\omega^2-\omega_s ^2}{\omega^2-\omega_p ^2}\\
         \end{split} 
       \end{equation*}
 	\end{minipage}
 \end{figure}
 
 \FloatBarrier
-\subsection{Nichtabgestimmte Oszillatoren\normalfont{\small{(Skript S.6-10)}}}
+\subsection{Nichtabgestimmte Oszillatoren}
+
+\FloatBarrier
+\subsubsection{Ringozsillator}
+Beim Ringoszillator wird eine ungerade Anzahl Inverter aneinander gereit. Die Frequenz ensteht durch die totale Verzögerung, welche sich aus den einzelnen Verzögerungen der Inverter ergibt.
+\begin{figure}[h!]
+	\begin{minipage}{0.4\textwidth} 
+	\includegraphics[width=0.8\textwidth]{images/Ring_Osc}
+	\subcaption*{Ringoszillator mit a) CMOS-Invertern und b) differentiellen Invertern}
+	\begin{equation*} 
+        \begin{split} 
+          f_{osc} =\frac{1}{2n\cdot t_g} \quad \quad \Delta\varphi =\frac{180^\circ}{2n}   
+        \end{split} 
+      \end{equation*}
+	\end{minipage}
+	\begin{minipage}{0.5\textwidth}
+	  \begin{compactitem}
+        \item Vorteil:
+        \begin{compactitem}
+           \item hohe $f_{osc}$ 
+        \end{compactitem}
+        \item Nachteile:
+        \begin{compactitem}
+           \item $f_{osc}$ ungenau
+        \end{compactitem}
+        \item Einsatz:
+        \begin{compactitem}
+           \item Prozesscharakterisierung
+           \item Als gesteuerte Oszillatoren in PLL's
+        \end{compactitem}
+        \item Verzögerung ist Abhängig von der Versorungsspannung
+        \item Verzögerung erhöht sich, wenn der Ausgang kapazitiv belastet wird (\"fan-out\")
+        \item $n$: Anzahl Inverter
+        \item $t_g$: Verzögerung pro Inverter
+        \item $\Delta\varphi$: Phansenverschiebung
+      \end{compactitem}
+	\end{minipage}
+\end{figure}
+
 \subsubsection{Multivibrator-Oszillatoren}
 Beim Multivibrator wird der Verstärker durch einen Schmitt-Trigger (Komperator mit Hysterese) ersetzt. Als Frequenzbestimmendes Element wird ein RC-Netzwerk verwendet. Die Hysteresefunktion lässt sich dann ausnutzen, um einen Oszillator zu entwerfen. Das RC-Netzwerk als Rückkopplung dient als Tiefpass welcher eine grobe Annäherung eines Integrator darstellt.
 \begin{figure}[h!]
@@ -167,12 +205,12 @@ Beim Multivibrator wird der Verstärker durch einen Schmitt-Trigger (Komperator 
         \item min. Komperator Ausgnagsspannung:\quad $L_-=V_-$
         \item obere Umschaltschwelle: \quad $V_{TH}=\beta\cdot L_+$
         \item untere Umschaltschwelle: \quad $V_{TL}=\beta\cdot L_-$
-        \item Teilungsfaktor: $\beta$\\\\
+        \item Teilungsfaktor: $\beta$\\
        \end{compactitem}
       \begin{equation*} 
         \begin{split} 
-          &f_{osc}=\frac{1}{T} \quad \text{mit} \quad T=\tau \cdot ln \frac{(\beta L_- - L_+)(\beta L_+ - L_-)}{(\beta L_+ - L_+)(\beta L_- - L_-)}\\\\
-          & \text{für} \quad   L_+=L_-: \quad  T=2\tau \cdotln\frac{\beta+1}{\beta-1}\\\\
+          &f_{osc}=\frac{1}{T} \quad \text{mit} \quad T=\tau \cdot ln \frac{(\beta L_- - L_+)(\beta L_+ - L_-)}{(\beta L_+ - L_+)(\beta L_- - L_-)}\\
+          & \text{für} \quad   L_+=L_-: \quad  T=2\tau \cdot ln\frac{\beta+1}{\beta-1}\\
         \end{split} 
       \end{equation*}
 	\end{minipage}
@@ -183,7 +221,7 @@ Beim Multivibrator wird der Verstärker durch einen Schmitt-Trigger (Komperator 
 Der LM555 ist ein fertiger IC welcher  mit einem Schmitt-Trigger und dessen Hysterese und exterenen RC-Beschaltung arbeiteite.
 \begin{figure}[h!]
 	\begin{minipage}{0.5\textwidth} 
-	\includegraphics[width=1\textwidth]{images/LM555}
+	\includegraphics[width=0.9\textwidth]{images/LM555}
 	%\subcaption*{Regelung der Pollage durch amplitudenabhängige Vertärkung}
 	\end{minipage}
 	\begin{minipage}{0.4\textwidth}
@@ -209,46 +247,8 @@ Der LM555 ist ein fertiger IC welcher  mit einem Schmitt-Trigger und dessen Hyst
 \end{figure}
 
 \FloatBarrier
-\subsubsection{Ringozsillator\normalfont{\small{(Skript S.6-15)}}}
-Beim Ringoszillator wird eine ungerade Anzahl Inverter aneinander gereit. Die Frequenz ensteht durch die totale Verzögerung, welche sich aus den einzelnen Verzögerungen der Inverter ergibt.
-\begin{figure}[h!]
-	\begin{minipage}{0.4\textwidth} 
-	\includegraphics[width=1\textwidth]{images/Ring_Osc}
-	\subcaption*{Ringoszillator mit a) CMOS-Invertern und b) differentiellen Invertern}
-	\begin{equation*} 
-        \begin{split} 
-          f_{osc} =\frac{1}{2n\cdot t_g} \quad \quad \Delta\varphi =\frac{180^\circ}{2n}   \\\\
-        \end{split} 
-      \end{equation*}
-	\end{minipage}
-	\begin{minipage}{0.5\textwidth}
-	  \begin{compactitem}
-        \item Vorteil:
-        \begin{compactitem}
-           \item hohe $f_{osc}$ 
-        \end{compactitem}
-        \item Nachteile:
-        \begin{compactitem}
-           \item $f_{osc}$ ungenau
-        \end{compactitem}
-        \item Einsatz:
-        \begin{compactitem}
-           \item Prozesscharakterisierung
-           \item Als gesteuerte Oszillatoren in PLL's\\
-        \end{compactitem}
-        \item Verzögerung ist Abhängig von der Versorungsspannung
-        \item Verzögerung erhöht sich, wenn der Ausgang kapazitiv belastet wird (\"fan-out\")
-        \item $n$: Anzahl Inverter
-        \item $t_g$: Verzögerung pro Inverter
-        \item $\Delta\varphi$: Phansenverschiebung
-      \end{compactitem}
-	\end{minipage}
-\end{figure}
-
-\FloatBarrier
-\subsection{Spannungsgesteuerte Oszillatoren (VCO)\normalfont{\small{(Skript S.6-17)}}}
-Mathematische Beschreibung siehe Kapitel \ref{Kap.VCO}.
-Das Ziel ist es, bekannte Oszillatortopologien so zu nutzen, dass man sie mit einer Spannung oder einem Strom steuern kann. Dafür gibt es folgende Methoden (Siehe Beispiele ab S.6-20 in Skript):
+\subsection{Spannungsgesteuerte Oszillatoren (VCO)}
+Das Ziel ist es, bekannte Oszillatortopologien so zu nutzen, dass man sie mit einer Spannung oder einem Strom steuern kann. Dafür gibt es folgende Methoden (Siehe Beispiele ab S.6-20 in Skript).
 
 \FloatBarrier
 \subsubsection{FET im Anlaufgebiet}
@@ -272,14 +272,13 @@ Durch Veränderung der Schaltschwelle eines Multivibrators lässt sich die Auf- 
 \FloatBarrier
 \subsubsection{Delay-Interpolation}
 \begin{figure}[h!]
-	\begin{minipage}{0.3\textwidth} 
+	\begin{minipage}{0.25\textwidth} 
       \includegraphics[width=1\textwidth]{images/Fast_Path}
     \end{minipage}
-    \begin{minipage}{0.6\textwidth} 
+    \begin{minipage}{0.75\textwidth} 
        Bei Ringoszillatoren kann bei differenziellen Invertern die effektive Anzahl Inverter durch Ändern des Schaltstromes zwischen zwei Extremen geändert werden.
        \begin{equation*} 
-         f_{min} =\frac{1}{2n_{max}\cdot t_g} \quad \text{und} \quad f_{max} =\frac{1}{2n_{min}\cdot t_g}   \\\\
+         f_{min} =\frac{1}{2n_{max}\cdot t_g} \quad \text{und} \quad f_{max} =\frac{1}{2n_{min}\cdot t_g}  
        \end{equation*}
     \end{minipage}
 \end{figure}
-

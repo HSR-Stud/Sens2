@@ -1,5 +1,5 @@
 \raggedright
-\section {Phasenregelkreis PLL \normalfont{\small{(Skript S.7-1 (PLL))}}}
+\section {Phasenregelkreis PLL}
 Anwdungsbeispiele von PLL's sind: \textbf{Frequenzsynthese} (Höhere Frequenz am Ausgang als am Eingang), \textbf{Kohärenter Empfang/Trägerrückgewinnung}, \textbf{Frequenzmodulation/Demodulation}.  PLL's lassen sich wie folgt klassifizieren:\\
 \begin{compactenum}
     \item \textbf{Vollständig analoge PLL}: Phasendetektor ist analoger Multipliziere, Schleienfilter sowie VCO sind analoge Schaltungsblöcke. Alle Signale zeit-und amplitudenkontinuierlich
@@ -9,64 +9,57 @@ Anwdungsbeispiele von PLL's sind: \textbf{Frequenzsynthese} (Höhere Frequenz am
     \item \textbf{Software PLL}: Simulation auf einem Computer
 \end{compactenum}
 
-\subsection{Grundlagen \normalfont{\small{(Skript S.7-4 (PLL))}}}
-\vspace{-0.3cm}
+\subsection{Grundlagen}
 \begin{figure}[h!]
-	\begin{minipage}{0.35\textwidth} 
-       \includegraphics[width=0.9\textwidth]{images/Prinzip_PLL}\\
+	\begin{minipage}{0.25\textwidth} 
+       \includegraphics[width=0.8\textwidth]{images/Prinzip_PLL}\\
 	\end{minipage}
-	\begin{minipage}{0.55\textwidth}
+	\begin{minipage}{0.75\textwidth}
 	   Ein PLL ist ein Regelsystem, für die Phase $\varphi_1(t)$ und $\varphi_2(t)$. Das Ziel ist es, die Phase $\varphi_2(t)$ des  VCO's $\varphi_1(t)$ bis auf einen allfälligen (konstanten) Phasenfehler $\Delta \varphi_0$ nachzuregeln.\\
-       Weil: $\varphi _1(t\to \infty ) - \varphi_2(t \to \infty)= \Delta \varphi = const$ und somit $\Delta \omega = \frac{d}{dt}\Delta \varphi_0 = 0$ ist, komm man zum Schluss, dass für die Frequenzen $\omega_1 = \omega_2$ gelten muss.
+       Weil: $\varphi _1(t\to \infty ) - \varphi_2(t \to \infty)= \Delta \varphi = const$ und somit $\Delta \omega = \frac{d}{dt}\Delta \varphi_0 = 0$ ist, kommt man zum Schluss, dass für die Frequenzen $\omega_1 = \omega_2$ gelten muss.
 	\end{minipage}
 
-    \begin{minipage}{0.50\textwidth} 
+    \begin{minipage}{0.4\textwidth} 
        \includegraphics[width=0.9\textwidth]{images/Hohe_Frequ}\\
     \end{minipage}
-    \begin{minipage}{0.4\textwidth}
-      Vergleicht man das Referenzsignal mit einer durch einen Faktor M geteilten Teil des Oszillatorsignals, ist die Frequenz des Ausgangssignals um den Faktor M grösser als die des Eingangssignals. Wenn $M$ steuerbar ist, lassen sich exakte Vielfache der Frequenz ω0 erzeugen. Lässt sich ein rationales Teilerverhältnis N/M einstel-len, spricht man von einer "Fractional-N PLL". Mit speziellen Techniken kann man mit einem Fractional-N PLL kontinuierlich einstellbare Frequenzbereiche erzielen.
+    \begin{minipage}{0.6\textwidth}
+      Vergleicht man das Referenzsignal mit einer durch einen Faktor M geteilten Teil des Oszillatorsignals, ist die Frequenz des Ausgangssignals um den Faktor M grösser als die des Eingangssignals. Wenn $M$ steuerbar ist, lassen sich exakte Vielfache der Frequenz $\omega0$ erzeugen. Lässt sich ein rationales Teilerverhältnis N/M einstellen, spricht man von einer "Fractional-N PLL". Mit speziellen Techniken kann man mit einem Fractional-N PLL kontinuierlich einstellbare Frequenzbereiche erzielen.
     \end{minipage}
 \end{figure}
 
-\subsection{VCO \normalfont{\small{(Skript S.7-5 (PLL))}}} 
-\label{Kap.VCO}
-\vspace{-0.7cm}
+\subsection{VCO} 
 \begin{figure}[h!]
-	\begin{minipage}{0.3\textwidth} 
+	\begin{minipage}{0.25\textwidth} 
        \includegraphics[width=0.7\textwidth]{images/K_VCO}
 	\end{minipage}
-	\begin{minipage}{0.6\textwidth}
+	\begin{minipage}{0.75\textwidth}
 	Aufgabe: Generierung einer Frequenz in Funktion einer Spannung
 	   \begin{equation*}
          \begin{split}
             &\omega_2 = \omega_0+K_{VCO}\cdot u_f(t) \quad \quad (K_{VCO}=\text{VCO-Verstärkung})  \\
-            &\varphi_2(t) =\int \limits_{t_0}^{t} \omega_2 \ d\tau =\int \limits_{t_0}^{t} \omega _0 + K_{VCO}\cdot u_f (\tau)\ d \tau =\omega_0 t + K_{VCO} \int \limits_{}^{} u_f(\tau) d\tau +\varphi_2_0 \\
+            &\varphi_2(t) =\int \limits_{t_0}^{t} \omega_2 \ d\tau =\int \limits_{t_0}^{t} \omega _0 + K_{VCO}\cdot u_f (\tau)\ d \tau =\omega_0 t + K_{VCO} \int \limits_{}^{} u_f(\tau) d\tau +\varphi_{20} \\
          \end{split}
         \end{equation*}
 	\end{minipage}
 \end{figure}
-\vspace{-0.7cm}
 
-\subsection{Phasendetektor (PD) \normalfont{\small{(Skript S.7-6 (PLL))}}}
-\label{Kap.VCO}
-\vspace{-0.7cm}
+\subsection{Phasendetektor (PD)}
 \begin{figure}[h!]
-	\begin{minipage}{0.2\textwidth} 
-       \includegraphics[width=1\textwidth]{images/Phasen_Detekt}
+	\begin{minipage}{0.25\textwidth} 
+       \includegraphics[width=0.7\textwidth]{images/Phasen_Detekt}
     \vspace{0.2cm}
 	\end{minipage}
-	\begin{minipage}{0.7\textwidth}
+	\begin{minipage}{0.75\textwidth}
 	   Aufgabe: Differenzbildner für die Phasensignale. Die mittlere Ausgangsspannung ist: 
 	   \begin{equation*}
          \begin{split}
             \overline{u_d}=K_{PD}\cdot \Delta \varphi
          \end{split}
         \end{equation*}
-        In der Praxis werden verschiedene Elemente eingesetzt:  \\  ($V_0$: max. Wert von $\overline{u_d}$)
+        In der Praxis werden verschiedene Elemente eingesetzt: ($V_0$: max. Wert von $\overline{u_d}$)
 	\end{minipage}
 \end{figure}
 
-\vspace{-1cm}
 \begin{figure}[h!]
 	\begin{minipage}{0.1\textwidth}
         \begin{tabular}{|c|c|c|c|}
@@ -84,7 +77,7 @@ Anwdungsbeispiele von PLL's sind: \textbf{Frequenzsynthese} (Höhere Frequenz am
 \end{figure}
 
 \FloatBarrier
-\subsection{Schleifenfilter} \normalfont{\small{(Skript S.7-10 (PLL))}}}
+\subsection{Schleifenfilter}
 Aufgabe: Mitteln des PD-Signals (TP-Charakteristik). Dafür gibt es folgenden Methoden:
 \begin{figure}[h!]
 \begin{minipage}{0.1\textwidth}
@@ -105,12 +98,12 @@ Aufgabe: Mitteln des PD-Signals (TP-Charakteristik). Dafür gibt es folgenden Me
 * (für PFD) 
 
 \FloatBarrier
-\subsection{Linearisierung \normalfont{\small{(Skript S.7-12 (PLL))}}}
+\subsection{Linearisierung}
 \begin{figure}[h!]
-	\begin{minipage}{0.5\textwidth} 
+	\begin{minipage}{0.3\textwidth} 
        \includegraphics[width=1\textwidth]{images/linear_PLL}
 	\end{minipage}
-	\begin{minipage}{0.4\textwidth} 
+	\begin{minipage}{0.7\textwidth} 
        \begin{compactitem}
           \item Linearisierung gilt für eingerasteteten PLL ($\omega_1 = \omega_2$) und leichte Abweichung der Ruhelage
           \item lineare Systeme können mit Laplace-Transformation analysiert werden.
@@ -119,12 +112,12 @@ Aufgabe: Mitteln des PD-Signals (TP-Charakteristik). Dafür gibt es folgenden Me
 \end{figure}
 
 \FloatBarrier
-\subsection{Eigenschaften der PLL im eingerasteten Zustand \normalfont{\small{(Skript S.7-12 (PLL))}}}
+\subsection{Eigenschaften der PLL im eingerasteten Zustand}
 \begin{figure}[h!]
 	\begin{minipage}{0.5\textwidth} 
        \includegraphics[width=1\textwidth]{images/PLL_Stabilitaet}
 	\end{minipage}
-	\begin{minipage}{0.4\textwidth} 
+	\begin{minipage}{0.5\textwidth} 
        \begin{compactitem}
           \item Stabilität ist wie bei anderen Regelkreisen wichtig. Sonst rastet PLL nicht ein.
           \item Nullstelle bei $s=\frac{1}{\tau_2}$ muss zu niedrigen Frequenzen verschoben werden, dass System stabil ist.
@@ -143,7 +136,7 @@ Aufgabe: Mitteln des PD-Signals (TP-Charakteristik). Dafür gibt es folgenden Me
 %\end{figure}
 
 \FloatBarrier
-\subsection{ADPLL (All Digital PLL)\normalfont{\small{(Skript S.7-1 (ADPLL))}}}
+\subsection{ADPLL (All Digital PLL)}
 \begin{figure}[h!]
 	\begin{minipage}{0.45\textwidth} 
        \includegraphics[width=1\textwidth]{images/ADPLL}
@@ -163,8 +156,8 @@ Aufgabe: Mitteln des PD-Signals (TP-Charakteristik). Dafür gibt es folgenden Me
          \item \textbf{FF-Counter} $N$ von $0$ bis $\frac{T_{per}}{T_{clk}}$
          \item \textbf{Nyquist Rate Phase Detector}: Analoger Multiplizierer wird mit ADC und digitaler Multiplikation realisiert.
          \item \textbf{Zero-Crossing Phase Detector)}: Abtastung des Eingagssignals beim Nulldurchgang vom Feedback-Loop
-         \item \textbf{Hilbert Transform Phase Detector)}
-         \item \textbf{Digital-Averaging Phase Detector)}
+         \item \textbf{Hilbert Transform Phase Detector}
+         \item \textbf{Digital-Averaging Phase Detector}
     \end{compactitem}
     
     \subsubsection{Loop-Filter}

@@ -23,11 +23,34 @@
 \subsubsection{Probleme}
 Die schnellsten ADCs haben heute Abtastraten bis Gsa/sec. Das Maximum heute ist 12 Bit Auflösung bei 4GS/s. Dies ergibt eine Datenrate von 48GB/s. Ein I2C oder SPI-Interface kann die Daten nicht abholen. Auch ein Parallel-Interface ist zu langsam. Aus diesem Grund sind andere Lösungen gefragt.
 
+\begin{multicols}{2}
+    \subsubsection{Parallel CMOS or LVDS Interfaces}
+    \includegraphics[width=0.45\textwidth]{images/adc_conventional}
+
+    \subsubsection{JESD204B Interface}
+    \includegraphics[width=0.48\textwidth]{images/adc_jesd}
+\end{multicols}
 Standard CMOS Logik ist bei hohen Datenraten nicht mehr sparsam. LVDS und auch CML sind besser geeignet. JESD204 verwendet CML.
 
+\subsubsection{JESD204B: Input/Output}
+Der Aus- und Eingang enthalten je einen 50 Ohm Abschluss.
 
+\subsection{Programmierbare Logik}
+\begin{wrapfigure}[10]{l}{0.46\textwidth}
+    \hspace{-60pt}
+    \centering
+    \includegraphics[width=0.45\textwidth]{images/fpga_technology}
+\end{wrapfigure}
+\subsubsection{Trend}
+Vor 10-20 Jahren gab es noch diverse Hersteller. Diverse CPLD und FPGA-Hersteller sind mittlerweile ausgestiegen. \\
+Der Highest Speed ist bald erreicht mit Silizium-ICs. Die Preise für ICs sind dabei exorbitant. Ebenfalls ist der Markt für Anwendungen mit maximalem Speed beschränkt. \\
+\ \\ \ \\ \ \\ \ \\
 
-
+\begin{wrapfigure}[7]{l}{0.31\textwidth}
+    \hspace{-60pt}
+    \centering
+    \includegraphics[width=0.28\textwidth]{images/cmos_logic}
+\end{wrapfigure}
 \subsection{CMOS-Logik}
 \begin{compactitem}
     \item State of the art für integrierte Bausteine.
@@ -39,7 +62,7 @@ Standard CMOS Logik ist bei hohen Datenraten nicht mehr sparsam. LVDS und auch C
 \end{compactitem}
 
 \clearpage
-
+\newpage
 
 \subsection{TTL Transistor-Transistor-Logik}
 \begin{compactitem}

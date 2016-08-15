@@ -52,25 +52,68 @@
 \end{multicols}
 
 \subsection{Optische Distanzmessung}
+\subsubsection{Vergleich}
+\begin{multicols}{4}
+    \paragraph{Stereo}
+    \begin{compactitem}
+        \item Passive Messung
+        \item Objektstruktur nötig, Abschattungen möglich
+        \item Rechenaufwändig
+    \end{compactitem}
+    
+    \paragraph{Laufzeitmessung (Time-of-Flight)}
+    \begin{compactitem}
+        \item Aktive Beleuchtung nötig
+        \item Keine Abschattung
+    \end{compactitem}
+    \ \\
+    
+    \paragraph{Triangulation}
+    \begin{compactitem}
+        \item Aktive Beleuchtung nötig
+        \item Keine Struktur nötig
+        \item Relativ einfache Berechnung
+    \end{compactitem}
+    \ \\
+    
+    \paragraph{Interferometrie}
+    \begin{compactitem}
+        \item Höchste Auflösung
+        \item Aufwändige Technik
+    \end{compactitem}
+    \ \\ \ \\ \ \\
+\end{multicols}
 
-%\begin{multicols}{2}
-  \subsubsection{Stereo Messung}
-  \begin{compactitem}
+\newpage
+\subsubsection{Stereo Messung}
+\begin{wrapfigure}[6]{l}{0.3\textwidth}
+    %\vspace{-12pt}
+    \centering
+    \includegraphics[width=0.25\textwidth]{images/photonik_anwendung_stereo}
+\end{wrapfigure}
+\ 
+\vspace{-5pt}
+\begin{compactitem}
     \item Diese Methode ist dem menschlichen Sehen nachempfunden.
     \item Es ist ein passives System: keine Beleuchtung nötig.
     \item Eine aufwändige Berechnung ist notwendig (Kreuzkorrelation zwischen den Bildern muss berechnet werden).
     \item Einfarbige Flächen können nicht bestimmt werden.
-  \end{compactitem}
+\end{compactitem}
 
-  \subsubsection{Triangulations Messung}
- 
-  \begin{compactitem}
+\subsubsection{Triangulations Messung}
+\begin{wrapfigure}[4]{l}{0.3\textwidth}
+    %\vspace{-12pt}
+    \centering
+    \includegraphics[width=0.1\textwidth, angle=90]{images/photonik_anwendung_triangulation}
+\end{wrapfigure}
+\ 
+\vspace{-5pt}
+\begin{compactitem}
     \item Ein Zeilensensor misst den Fokus des reflektierten Laserlichts.
     \item Mit der Winkelbeziehung wird die Distanz bestimmt.
     \item Eine Beleuchtung ist nötig.
     \item Einfache Detektion und Berechnung der Distanz über die Geometrie.
-  \end{compactitem}
-%\end{multicols}
+\end{compactitem}
 
 \subsubsection{Time-of-Flight Messung}
 \begin{compactitem}
@@ -156,4 +199,19 @@
     \item Durch diese Thermodiffusionsströme entsteht zwischen den Kontaktstellen eine elektrische Spannung, die Thermo- oder Seebeck-Spannung.
 \end{compactitem}
 
-$\ \ \ \ \ \ \  V_{out}=N \cdot S \cdot(T_x - T_{REF})$ \ \ \ \ \ N: Number of thermocouples \ \ \ \ \ S: Seebeck coefficient
+
+\begin{minipage}{0.45\textwidth}
+       \begin{equation*} 
+        \begin{split} 
+          &V_{out}=N \cdot S \cdot(T_x - T_{REF})\\
+          &\text{N: Number of thermocouples}\\
+          &\text{S: Seebeck coefficient}
+        \end{split} 
+      \end{equation*}
+
+\end{minipage}
+\begin{minipage}{0.5\textwidth} 
+    \vspace{-0.5cm}
+    \includegraphics[width=1\textwidth]{images/Thermo}
+\end{minipage}
+
